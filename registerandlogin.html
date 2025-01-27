@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loginform&registerform</title>
+  </head>
+  <body>
+    <h1></h1>
+    <!-- form 1 -->
+    <div id="login"></div>
+
+    <!-- form 2 -->
+    <!-- <div>
+         <form action="" method="">
+           <input type="text" name="fName" id="fname" placeholder="FIRSTNAME" />
+           <input type="text" name="lName" id="lName" placeholder="LASTNAME" />
+           <input type="email" name="email" id="email" placeholder="EMAIL" />
+           <input type="password" name="Password" id="password" placeholder="PASSWORD"/>
+           <input type="number" name="PNo" id="pNo" placeholder="PHONENUMBER" />
+           <button id="Submit">Submit</button>
+         </form>
+       </div> -->
+    <script>
+      // form 1
+
+      //THIS CODE FOR HEADING TAG
+      let heading = document.createElement("h1");
+      document.body.appendChild(heading);
+      let headingcontent = document.getElementsByTagName("h1");
+      headingcontent[0].innerText = "Login Form";
+      headingcontent[0].style.backgroundColor = "blue";
+
+      //THIS CODE FOR FORM 1
+      let form = document.createElement("form");
+      let email = document.createElement("input");
+      email.setAttribute("class", "email");
+      email.setAttribute("name", "email");
+      email.setAttribute("id", "email");
+      email.setAttribute("type", "email");
+      email.setAttribute("placeholder", "email");
+      form.appendChild(email);
+      let password = document.createElement("input");
+      password.setAttribute("id", "password");
+      password.setAttribute("type", "password");
+      password.setAttribute("class", "password");
+      password.setAttribute("name", "password");
+      password.setAttribute("placeholder", "password");
+      form.appendChild(password);
+      let btn = document.createElement("button");
+      btn.setAttribute("id", "button");
+      form.appendChild(btn);
+      btn.innerText = "SUBMIT";
+      login.appendChild(form);
+
+      let emails = document.getElementsByName("email")[0];
+      // console.log(emails);
+      let passwords = document.getElementsByName("password")[0];
+      // console.log(passwords);
+      let btns = document.getElementsByTagName("button")[0];
+      // console.log(btns);
+      let obj = {};
+      btns.addEventListener("click", function (e) {
+        e.preventDefault();
+        // console.log(emails.value);
+        // console.log(passwords.value);
+        obj.email = emails.value;
+        obj.password = passwords.value;
+        emails.value = "";
+        passwords.value = "";
+        console.log(obj);
+
+        //we can show key and value in web pages
+        for (i in obj) {
+          let elemn = document.createElement("p");
+          form.appendChild(elemn);
+          elemn.innerText = `the value of ${i}is:${obj[i]}`;
+        }
+      });
+
+      btns.addEventListener("click", () => {
+        console.log("LOG IN FORM");
+      });
+
+      //   form 2
+
+      //   let fname = document.getElementsByName("fName")[0];
+      //   let lname = document.getElementsByName("lName")[0];
+      //   let emailid = document.getElementsByName("email")[0];
+      //   console.log(emailid);
+      //   let passs = document.getElementsByName("Password")[0];
+      //   console.log(passs);
+      //   let pNo = document.getElementsByName("PNo")[0];
+      //   let btn = document.getElementsByTagName("button")[0];
+      //   obj2 = {};
+      //   btn.addEventListener("click", (e) => {//external event handling has    elementname addEventListener("event",function(){}) event=click,hover,keydown etc.... type of event.event handler function
+      // e.preventDefault();
+      // console.log(fname.value);
+      // console.log(lname.value);
+      // console.log(emailid.value);
+      // console.log(passs.value);
+      // console.log(pNo.value);
+
+      //     obj2.firstname = fname.value;
+      //     obj2.lastname = lname.value;
+      //     obj2.email = emailid.value;
+      //     obj2.password = passs.value;
+      //     obj2.pno = pNo.value;
+      //     fname.value = "";
+      //     lname.value = "";
+      //     emailid.value = "";
+      //     passs.value = "";
+      //     pNo.value = "";
+      //     console.log(obj2);
+      //   });
+
+      //   btn.addEventListener("click", function () {
+      //     console.log("hello addeventlistner");
+      //   });
+
+      //           // Event listener on the outer div with capturing
+      //   document.getElementById('outer').addEventListener('click', function() {
+      //     console.log('Outer div clicked (capturing)');
+      //   }, true);
+
+      //   // Event listener on the inner div with capturing
+      //   document.getElementById('inner').addEventListener('click', function() {
+      //     console.log('Inner div clicked (capturing)');
+      //   }, true);
+
+      //   // Event listener on the button without capturing (using default, which is bubbling)
+      //   document.getElementById('myButton').addEventListener('click', function() {
+      //     console.log('Button clicked (bubbling)');
+      //   });
+    </script>
+  </body>
+</html>
